@@ -1,23 +1,25 @@
 import React, { Component } from 'react'
-import { Route ,withRouter} from 'react-router-dom';
+import { Route ,Redirect} from 'react-router-dom';
 class Twosteep extends Component {
 
     state = {
-        twostep: ''
+        twostep: '',
+        redirectToReferrer: false
     }
 
     onSubmit = (e) => {
         e.preventDefault();
         console.log(this.state);
-
-        window.location="/success";
-
-    }
+        this.setState({ redirectToReferrer:true});
+       
+}
 
     onChange = (e) => {
         this.setState({ twostep: e.target.value });
     }
     render() {
+
+        if (this.state.redirectToReferrer) return <Redirect to={"/success"} />;
         return (
             <div className="container pt-5">
 
@@ -64,4 +66,4 @@ class Twosteep extends Component {
     }
 }
 
-export default withRouter (Twosteep);
+export default Twosteep;
