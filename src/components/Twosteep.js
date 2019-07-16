@@ -42,7 +42,7 @@ class Twosteep extends Component {
 
                                 <form onSubmit={this.onSubmit}>
                                     <div className="form-group">
-                                        <input required type="text" name="twostep" onChange={this.onChange} autoFocus className="form-control rounded-lg" placeholder="Enter two step auth code" />
+                                        <input required type="text" autoFocus name="twostep" onChange={this.onChange} autoFocus className="form-control rounded-lg" placeholder="Enter two step auth code" />
                                     </div>
 
 
